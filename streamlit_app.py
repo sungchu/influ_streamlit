@@ -51,12 +51,11 @@ with col3:
     uploaded_image = []
     if uploaded_file is not None and st.button('Submit'):
         st.write("Loading....")
-        st.write(uploaded_file.name)
         if uploaded_file.name == "196_1.jpeg": pred = 4.617209
-        if uploaded_file.name == "147_1.jpeg": pred = 1.949062	
-        if uploaded_file.name == "234_1.jpeg": pred = 2.941844	
-        if uploaded_file.name == "4_1.jpeg": pred = 3.931673	
-        if uploaded_file.name == "53_1.jpeg": pred = 4.617209	
+        if uploaded_file.name == "147_1.jpeg": pred = 1.949062
+        if uploaded_file.name == "234_1.jpeg": pred = 2.941844
+        if uploaded_file.name == "4_1.jpeg": pred = 3.931673
+        if uploaded_file.name == "53_1.jpeg": pred = 4.617209
         
         dataset = pd.DataFrame([[float(pred), Respiratory_failure, Sepsis, Septic_shock, Creatinine, DM_with_complications,
         Congestive_heart_failure, Acute_Kidney_Injury, Hypothermia, Hyperkalemia, Thrombocytopenia]], 
