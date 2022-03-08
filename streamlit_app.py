@@ -51,6 +51,7 @@ with col3:
     uploaded_image = []
     if uploaded_file is not None and st.button('Submit'):
         st.write("Loading....")
+        st.write(uploaded_file.name)
         if uploaded_file.name == "196_1.jpeg": pred = 4.617209
         if uploaded_file.name == "147_1.jpeg": pred = 1.949062	
         if uploaded_file.name == "234_1.jpeg": pred = 2.941844	
