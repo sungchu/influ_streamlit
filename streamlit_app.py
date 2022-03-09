@@ -25,12 +25,12 @@ st.markdown(
 
 with col1:
     # Respiratory_failure (0 = false/1 = true)
-    original_title = '<p style="font-size: 20px;">Respiratory failure</p>'
-    st.markdown(original_title, unsafe_allow_html=True)
+    st.markdown('<p style="font-size: 20px;">Respiratory failure</p>', unsafe_allow_html=True)
     rf = st.selectbox('',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
     # Sepsis (0 = false/1 = true)
-    se = st.selectbox('Sepsis',options = ['No','Yes'])
+    st.markdown('<p style="font-size: 20px;">Sepsis</p>', unsafe_allow_html=True)
+    se = st.selectbox('',options = ['No','Yes'])
     Sepsis = 1 if se == 'Yes' else 0 
     # Septic_shock (0 = false/1 = true)
     ss = st.selectbox('Septic_shock',options = ['No','Yes'])
