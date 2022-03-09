@@ -16,7 +16,6 @@ st.markdown("""<style> [data-baseweb="select"] {margin-top: -50px;} </style>""",
 
 with col1:
     # Respiratory_failure (0 = false/1 = true)
-    st.markdown("""<style> [data-baseweb="select"] {margin-top: -50px;} </style>""", unsafe_allow_html=True)
     st.markdown('<p style="font-size: 20px;">Respiratory failure</p>', unsafe_allow_html=True)
     rf = st.selectbox('',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
