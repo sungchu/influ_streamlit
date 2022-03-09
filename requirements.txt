@@ -4,4 +4,3 @@ pandas
 numpy
 pickle5
 matplotlib
-load_css
