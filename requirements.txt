@@ -4,3 +4,4 @@ pandas
 time
 numpy
 pickle
+matplotlib
