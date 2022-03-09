@@ -12,23 +12,16 @@ st.title('流感分級系統')
 
 col1, col2, col3 = st.columns((1,1,3))
 
-st.markdown(
-    """
-    <style>
-    [data-baseweb="select"] {
-        margin-top: -50px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+st.markdown("""<style> [data-baseweb="select"] {margin-top: -50px;} </style>""", unsafe_allow_html=True)
 
 with col1:
     # Respiratory_failure (0 = false/1 = true)
+    st.markdown("""<style> [data-baseweb="select"] {margin-top: -50px;} </style>""", unsafe_allow_html=True)
     st.markdown('<p style="font-size: 20px;">Respiratory failure</p>', unsafe_allow_html=True)
     rf = st.selectbox('',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
     # Sepsis (0 = false/1 = true)
+    st.markdown("""<style> [data-baseweb="select"] {margin-top: -50px;} </style>""", unsafe_allow_html=True)
     st.markdown('<p style="font-size: 20px;">Sepsis</p>', unsafe_allow_html=True)
     se = st.selectbox('',options = ['No','Yes'])
     Sepsis = 1 if se == 'Yes' else 0 
