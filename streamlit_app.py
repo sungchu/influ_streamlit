@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import pickle
 
-st.set_page_config(page_title = "Influ" ,layout="wide")
+st.set_page_config(page_title = "流感分級系統" ,layout="wide")
 st.title('流感分級系統')
 
 col1, col2, col3 = st.columns((1,1,3))
