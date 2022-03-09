@@ -1,7 +1,6 @@
 lightgbm
 streamlit
 pandas
-time
 numpy
 pickle
 matplotlib
