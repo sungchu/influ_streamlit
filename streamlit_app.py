@@ -30,8 +30,8 @@ with col1:
     rf = st.selectbox('',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
     # Sepsis (0 = false/1 = true)
-    original_title = '<p style="font-size: 20px;">Sepsis</p>'
-    st.markdown(original_title, unsafe_allow_html=True)
+    original_title2 = '<p style="font-size: 20px;">Sepsis</p>'
+    st.markdown(original_title2, unsafe_allow_html=True)
     se = st.selectbox('',options = ['No','Yes'])
     Sepsis = 1 if se == 'Yes' else 0 
     # Septic_shock (0 = false/1 = true)
