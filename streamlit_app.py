@@ -14,6 +14,8 @@ col1, col2, col3 = st.columns((1,1,3))
 
 with col1:
     # Respiratory_failure (0 = false/1 = true)
+    original_title = '<p style="font-size: 20px;">Respiratory failure</p>'
+    st.markdown(original_title, unsafe_allow_html=True)
     rf = st.selectbox('Respiratory failure',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
     # Sepsis (0 = false/1 = true)
