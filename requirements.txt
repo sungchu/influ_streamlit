@@ -1,1 +1,6 @@
 lightgbm
+streamlit
+pandas
+numpy
+pickle5
+matplotlib
