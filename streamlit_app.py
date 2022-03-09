@@ -30,33 +30,31 @@ with col1:
     rf = st.selectbox('',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
     # Sepsis (0 = false/1 = true)
-    original_title2 = '<p style="font-size: 20px;">Sepsis</p>'
-    st.markdown(original_title2, unsafe_allow_html=True)
-    se = st.selectbox('',options = ['No','Yes'])
+    se = st.selectbox('Sepsis',options = ['No','Yes'])
     Sepsis = 1 if se == 'Yes' else 0 
     # Septic_shock (0 = false/1 = true)
-    ss = st.selectbox('',options = ['No','Yes'])
+    ss = st.selectbox('Septic_shock',options = ['No','Yes'])
     Septic_shock = 1 if ss == 'Yes' else 0 
     # Creatinine
     Creatinine = st.number_input(label = 'Creatinine(mg/dL)', min_value = 0.0, step = 0.1)
     # DM_with_complications (0 = false/1 = true)
-    dm = st.selectbox('',options = ['No','Yes'])
+    dm = st.selectbox('DM with complications',options = ['No','Yes'])
     DM_with_complications = 1 if dm == 'Yes' else 0    
 with col2:
     # Congestive_heart_failure (0 = false/1 = true)
-    chf = st.selectbox('',options = ['No','Yes'])
+    chf = st.selectbox('Congestive heart failure',options = ['No','Yes'])
     Congestive_heart_failure = 1 if chf == 'Yes' else 0
     # Acute_Kidney_Injury (0 = false/1 = true)
-    aki = st.selectbox('',options = ['No','Yes'])
+    aki = st.selectbox('Acute Kidney Injury',options = ['No','Yes'])
     Acute_Kidney_Injury = 1 if aki == 'Yes' else 0 
     # Hypothermia (0 = false/1 = true)
-    hypo = st.selectbox('',options = ['No','Yes'])
+    hypo = st.selectbox('Hypothermia',options = ['No','Yes'])
     Hypothermia = 1 if hypo == 'Yes' else 0 
     # Hyperkalemia (0 = false/1 = true)
-    hype = st.selectbox('',options = ['No','Yes'])
+    hype = st.selectbox('Hyperkalemia',options = ['No','Yes'])
     Hyperkalemia = 1 if hype == 'Yes' else 0 
     # Thrombocytopenia (0 = false/1 = true)
-    th = st.selectbox('',options = ['No','Yes'])
+    th = st.selectbox('Thrombocytopenia',options = ['No','Yes'])
     Thrombocytopenia = 1 if th == 'Yes' else 0 
 
 with col3:
