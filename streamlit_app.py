@@ -12,6 +12,15 @@ st.title('流感分級系統')
 
 col1, col2, col3 = st.columns((1,1,3))
 
+checkbox_one = st.checkbox("Yes")
+checkbox_two = st.checkbox("No")
+
+if checkbox_one:
+    value = "Yes"
+elif checkbox_two:
+    value = "No"
+
+
 with col1:
     # Respiratory_failure (0 = false/1 = true)
     st.markdown('<p style="font-size: 20px;">Respiratory failure</p>', unsafe_allow_html=True)
