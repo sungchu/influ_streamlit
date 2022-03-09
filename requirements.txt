@@ -2,5 +2,5 @@ lightgbm
 streamlit
 pandas
 numpy
-pickle
+pickle5
 matplotlib
