@@ -7,19 +7,10 @@ import numpy as np
 import pandas as pd
 import pickle
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title = influ ,layout="wide")
 st.title('流感分級系統')
 
 col1, col2, col3 = st.columns((1,1,3))
-
-checkbox_one = st.checkbox("Yes")
-checkbox_two = st.checkbox("No")
-
-if checkbox_one:
-    value = "Yes"
-elif checkbox_two:
-    value = "No"
-
 
 with col1:
     # Respiratory_failure (0 = false/1 = true)
