@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import pickle
 from load_css import local_css
-local_css(“style.css”)
+local_css("style.css")
 
 st.set_page_config(layout="wide")
 st.title('流感分級系統')
