@@ -10,7 +10,7 @@ import pickle
 st.set_page_config(page_title = "流感分級系統" ,layout="wide")
 st.title('流感分級系統')
 
-col1, col2, col3 = st.columns((1,1,3))
+col1, col2 = st.columns((1,1))
 
 with col1:
     # Respiratory_failure (0 = false/1 = true)
@@ -44,30 +44,30 @@ with col2:
     th = st.selectbox('Thrombocytopenia',options = ['No','Yes'])
     Thrombocytopenia = 1 if th == 'Yes' else 0 
 
-with col3:
-    # upload X-ray image and return score(1-5)
-    uploaded_file = st.file_uploader("請上傳一張X光圖：", type=["jpeg"])
 
-    uploaded_image = []
-    if uploaded_file is not None and st.button('Submit'):
-        st.write("Loading....")
-        if uploaded_file.name == "Sample1.jpeg": pred = 4.617209
-        if uploaded_file.name == "Sample2.jpeg": pred = 1.949062
-        if uploaded_file.name == "Sample3.jpeg": pred = 2.941844
-        if uploaded_file.name == "Sample4.jpeg": pred = 3.931673
-        if uploaded_file.name == "Sample5.jpeg": pred = 4.617209
-        
-        dataset = pd.DataFrame([[float(pred), Respiratory_failure, Sepsis, Septic_shock, Creatinine, DM_with_complications,
-        Congestive_heart_failure, Acute_Kidney_Injury, Hypothermia, Hyperkalemia, Thrombocytopenia]], 
-        columns = ['pred', 'Respiratory_failure', 'Sepsis', 'Septic_shock', 'Creatinine', 'DM_with_complications',
-        'Congestive_heart_failure', 'Acute_Kidney_Injury', 'Hypothermia', 'Hyperkalemia', 'Thrombocytopenia'])
-        
-        dataset["pred"].astype('float')
-        
-        with open('LightGBM_clinicaldata_xray_AUC0.8158.pickle', 'rb') as f:
-            LightGBM = pickle.load(f)
-        result = LightGBM.predict_proba(dataset)
+# upload X-ray image and return score(1-5)
+uploaded_file = st.file_uploader("請上傳一張X光圖：", type=["jpeg"])
 
-        st.info("CXR嚴重度(1-5)評分為{:.2f}".format(float(pred)))
-        #st.write(result)  # alive within 30 days(0 = false/1 = true)
-        st.info("三十天內的存活率為{:.2f}%".format(result[0][1]*100))
+uploaded_image = []
+if uploaded_file is not None and st.button('Submit'):
+    st.write("Loading....")
+    if uploaded_file.name == "Sample1.jpeg": pred = 4.617209
+    if uploaded_file.name == "Sample2.jpeg": pred = 1.949062
+    if uploaded_file.name == "Sample3.jpeg": pred = 2.941844
+    if uploaded_file.name == "Sample4.jpeg": pred = 3.931673
+    if uploaded_file.name == "Sample5.jpeg": pred = 4.617209
+    
+    dataset = pd.DataFrame([[float(pred), Respiratory_failure, Sepsis, Septic_shock, Creatinine, DM_with_complications,
+    Congestive_heart_failure, Acute_Kidney_Injury, Hypothermia, Hyperkalemia, Thrombocytopenia]], 
+    columns = ['pred', 'Respiratory_failure', 'Sepsis', 'Septic_shock', 'Creatinine', 'DM_with_complications',
+    'Congestive_heart_failure', 'Acute_Kidney_Injury', 'Hypothermia', 'Hyperkalemia', 'Thrombocytopenia'])
+    
+    dataset["pred"].astype('float')
+    
+    with open('LightGBM_clinicaldata_xray_AUC0.8158.pickle', 'rb') as f:
+        LightGBM = pickle.load(f)
+    result = LightGBM.predict_proba(dataset)
+
+    st.info("CXR嚴重度(1-5)評分為{:.2f}".format(float(pred)))
+    #st.write(result)  # alive within 30 days(0 = false/1 = true)
+    st.info("三十天內的存活率為{:.2f}%".format(result[0][1]*100))
