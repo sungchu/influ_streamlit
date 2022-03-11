@@ -8,7 +8,7 @@ import pandas as pd
 import pickle
 from PIL import Image
 
-st.set_page_config(page_title = "流感分級系統" ,layout="wide")
+#st.set_page_config(page_title = "流感分級系統" ,layout="wide")
 st.title('流感分級系統')
 
 col1, col2 = st.columns((1,1))
