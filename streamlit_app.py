@@ -64,7 +64,7 @@ if uploaded_file is not None and st.button('Submit'):
     
     dataset["pred"].astype('float')
     
-    with open('LightGBM_clinicaldata_xray_AUC0.8158.pickle', 'rb') as f:
+    with open('LightGBM_clinicaldata_xray_AUC0.8862.pickle', 'rb') as f:
         LightGBM = pickle.load(f)
     result = LightGBM.predict_proba(dataset)
 
