@@ -6,6 +6,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
+from PIL import Image
 
 st.set_page_config(page_title = "流感分級系統" ,layout="wide")
 st.title('流感分級系統')
@@ -50,6 +51,8 @@ uploaded_file = st.file_uploader("請上傳一張X光圖：", type=["jpeg"])
 
 uploaded_image = []
 if uploaded_file is not None and st.button('Submit'):
+    image = Image.open(uploaded_file)
+    st.image(image, caption='X-ray', width = 320)
     st.write("Loading....")
     if uploaded_file.name == "Sample1.jpeg": pred = 4.617209
     if uploaded_file.name == "Sample2.jpeg": pred = 1.949062
