@@ -14,10 +14,9 @@ st.title('流感分級系統')
 col1, col2, col3 = st.columns((1,1,1))
 
 with col1:
-    # Respiratory_failure (0 = false/1 = true)
-    st.markdown('**Respiratory failure:**')
-    rf = st.selectbox('requires intubation and mechanical ventilation',options = ['No','Yes'])
-    Respiratory_failure = 1 if rf == 'Yes' else 0 
+    # Creatinine
+    st.markdown('**Creatinine (mg/dL):**')
+    Creatinine = st.number_input(label = '', min_value = 0.0, step = 0.1)
 with col2:
     # Sepsis (0 = false/1 = true)
     st.markdown('**Sepsis:**')
@@ -31,9 +30,10 @@ with col3:
 
 col1, col2, col3 = st.columns((1,1,1))
 with col1:
-    # Creatinine
-    st.markdown('**Creatinine (mg/dL):**')
-    Creatinine = st.number_input(label = '', min_value = 0.0, step = 0.1)
+    # Respiratory_failure (0 = false/1 = true)
+    st.markdown('**Respiratory failure:**')
+    rf = st.selectbox('requires intubation and mechanical ventilation',options = ['No','Yes'])
+    Respiratory_failure = 1 if rf == 'Yes' else 0 
 with col2:
     # DM_with_complications (0 = false/1 = true)
     st.markdown('**DM with complications:**')
