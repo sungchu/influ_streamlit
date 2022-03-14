@@ -19,15 +19,19 @@ with col1:
     rf = st.selectbox('requires intubation and mechanical ventilation',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
     # Sepsis (0 = false/1 = true)
-    se = st.selectbox('Sepsis',options = ['No','Yes'])
+    st.markdown('**Sepsis:**')
+    se = st.selectbox('life-threatening organ dysfunction (an acute change in total SOFA score ≥2 points) caused by a dysregulated host response to infection',options = ['No','Yes'])
     Sepsis = 1 if se == 'Yes' else 0 
     # Septic_shock (0 = false/1 = true)
-    ss = st.selectbox('Septic_shock',options = ['No','Yes'])
+    st.markdown('**Septic shock:**')
+    ss = st.selectbox('sepsis with persisting hypotension requiring vasopressors to maintain MAP ≥65 mm Hg and having a serum lactate level >2 mmol/L (18 mg/dL) despite adequate volume resuscitation',options = ['No','Yes'])
     Septic_shock = 1 if ss == 'Yes' else 0 
     # Creatinine
-    Creatinine = st.number_input(label = 'Creatinine(mg/dL)', min_value = 0.0, step = 0.1)
+    st.markdown('**Creatinine (mg/dL):**')
+    Creatinine = st.number_input(label = '', min_value = 0.0, step = 0.1)
     # DM_with_complications (0 = false/1 = true)
-    dm = st.selectbox('DM with complications',options = ['No','Yes'])
+    st.markdown('**DM with complications:**')
+    dm = st.selectbox('diabetes with chronic complications on Charlson Comorbidity Index',options = ['No','Yes'])
     DM_with_complications = 1 if dm == 'Yes' else 0    
 with col2:
     # Congestive_heart_failure (0 = false/1 = true)
