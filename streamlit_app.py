@@ -18,15 +18,19 @@ with col1:
     st.markdown('**Respiratory failure:**')
     rf = st.selectbox('requires intubation and mechanical ventilation',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
+with col2:
     # Sepsis (0 = false/1 = true)
     st.markdown('**Sepsis:**')
     se = st.selectbox('life-threatening organ dysfunction (an acute change in total SOFA score ≥2 points) caused by a dysregulated host response to infection',options = ['No','Yes'])
     Sepsis = 1 if se == 'Yes' else 0 
+with col3:
     # Septic_shock (0 = false/1 = true)
     st.markdown('**Septic shock:**')
     ss = st.selectbox('sepsis with persisting hypotension requiring vasopressors to maintain MAP ≥65 mm Hg and having a serum lactate level >2 mmol/L (18 mg/dL) despite adequate volume resuscitation',options = ['No','Yes'])
     Septic_shock = 1 if ss == 'Yes' else 0 
-with col2:
+
+col1, col2, col3 = st.columns((1,1,1))
+with col1:
     # Creatinine
     st.markdown('**Creatinine (mg/dL):**')
     Creatinine = st.number_input(label = '', min_value = 0.0, step = 0.1)
