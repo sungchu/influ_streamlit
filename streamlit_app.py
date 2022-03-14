@@ -66,7 +66,7 @@ with col3:
     Septic_shock = 1 if ss == 'Yes' else 0 
     
 col1, col2, col3 = st.columns((1,1,1))
-with col1:
+
     
     
 
