@@ -15,7 +15,7 @@ col1, col2 = st.columns((1,1))
 
 with col1:
     # Respiratory_failure (0 = false/1 = true)
-    st.markdown('Respiratory failure:')
+    st.markdown('**Respiratory failure:**')
     rf = st.selectbox('requires intubation and mechanical ventilation',options = ['No','Yes'])
     Respiratory_failure = 1 if rf == 'Yes' else 0 
     # Sepsis (0 = false/1 = true)
