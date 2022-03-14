@@ -11,7 +11,7 @@ from PIL import Image
 #st.set_page_config(page_title = "流感分級系統" ,layout="wide")
 st.title('流感分級系統')
 
-col1, col2 = st.columns((1,1))
+col1, col2, col3 = st.columns((1,1,1))
 
 with col1:
     # Respiratory_failure (0 = false/1 = true)
@@ -26,6 +26,7 @@ with col1:
     st.markdown('**Septic shock:**')
     ss = st.selectbox('sepsis with persisting hypotension requiring vasopressors to maintain MAP ≥65 mm Hg and having a serum lactate level >2 mmol/L (18 mg/dL) despite adequate volume resuscitation',options = ['No','Yes'])
     Septic_shock = 1 if ss == 'Yes' else 0 
+with col2:
     # Creatinine
     st.markdown('**Creatinine (mg/dL):**')
     Creatinine = st.number_input(label = '', min_value = 0.0, step = 0.1)
@@ -33,11 +34,11 @@ with col1:
     st.markdown('**DM with complications:**')
     dm = st.selectbox('diabetes with chronic complications on Charlson Comorbidity Index',options = ['No','Yes'])
     DM_with_complications = 1 if dm == 'Yes' else 0    
-with col2:
     # Congestive_heart_failure (0 = false/1 = true)
     st.markdown('**Congestive heart failure:**')
     chf = st.selectbox('Congestive heart failureon Charlson Comorbidity Index',options = ['No','Yes'])
     Congestive_heart_failure = 1 if chf == 'Yes' else 0
+with col3:
     # Acute_Kidney_Injury (0 = false/1 = true)
     st.markdown('**Acute kidney injury:**')
     aki = st.selectbox('by KDIGO criteria',options = ['No','Yes'])
