@@ -35,24 +35,30 @@ with col1:
     DM_with_complications = 1 if dm == 'Yes' else 0    
 with col2:
     # Congestive_heart_failure (0 = false/1 = true)
-    chf = st.selectbox('Congestive heart failure',options = ['No','Yes'])
+    st.markdown('**Congestive heart failure:**')
+    chf = st.selectbox('Congestive heart failureon Charlson Comorbidity Index',options = ['No','Yes'])
     Congestive_heart_failure = 1 if chf == 'Yes' else 0
     # Acute_Kidney_Injury (0 = false/1 = true)
-    aki = st.selectbox('Acute Kidney Injury',options = ['No','Yes'])
+    st.markdown('**Acute kidney injury:**')
+    aki = st.selectbox('by KDIGO criteria',options = ['No','Yes'])
     Acute_Kidney_Injury = 1 if aki == 'Yes' else 0 
     # Hypothermia (0 = false/1 = true)
-    hypo = st.selectbox('Hypothermia',options = ['No','Yes'])
+    st.markdown('**Hypothermia:**')
+    hypo = st.selectbox('core temperature less than 35°C',options = ['No','Yes'])
     Hypothermia = 1 if hypo == 'Yes' else 0 
     # Hyperkalemia (0 = false/1 = true)
-    hype = st.selectbox('Hyperkalemia',options = ['No','Yes'])
+    st.markdown('**Hyperkalemia:**')
+    hype = st.selectbox('serum potassium level > 5.2 mEq/L',options = ['No','Yes'])
     Hyperkalemia = 1 if hype == 'Yes' else 0 
     # Thrombocytopenia (0 = false/1 = true)
-    th = st.selectbox('Thrombocytopenia',options = ['No','Yes'])
+    st.markdown('**Thrombocytopenia:**')
+    th = st.selectbox('a platelet count of less than 150 × 103 per μL',options = ['No','Yes'])
     Thrombocytopenia = 1 if th == 'Yes' else 0 
 
 
 # upload X-ray image and return score(1-5)
-uploaded_file = st.file_uploader("請上傳一張X光圖：", type=["jpeg"])
+st.markdown('**請上傳一張X光圖：**')
+uploaded_file = st.file_uploader("", type=["jpeg"])
 
 uploaded_image = []
 if uploaded_file is not None and st.button('Submit'):
