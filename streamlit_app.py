@@ -66,7 +66,7 @@ with col3:
     Septic_shock = 1 if ss == 'Yes' else 0 
 
 # upload X-ray image and return score(1-5)
-st.markdown('**請上傳一張X光圖：**')
+st.markdown('**Please upload a Chest X-ray:**')
 uploaded_file = st.file_uploader("", type=["jpeg"])
 
 uploaded_image = []
