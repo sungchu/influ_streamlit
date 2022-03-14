@@ -34,27 +34,35 @@ with col1:
     # Creatinine
     st.markdown('**Creatinine (mg/dL):**')
     Creatinine = st.number_input(label = '', min_value = 0.0, step = 0.1)
+with col2:
     # DM_with_complications (0 = false/1 = true)
     st.markdown('**DM with complications:**')
     dm = st.selectbox('diabetes with chronic complications on Charlson Comorbidity Index',options = ['No','Yes'])
     DM_with_complications = 1 if dm == 'Yes' else 0    
+with col3:
     # Congestive_heart_failure (0 = false/1 = true)
     st.markdown('**Congestive heart failure:**')
     chf = st.selectbox('Congestive heart failureon Charlson Comorbidity Index',options = ['No','Yes'])
     Congestive_heart_failure = 1 if chf == 'Yes' else 0
-with col3:
+
+col1, col2, col3 = st.columns((1,1,1))
+with col1:
     # Acute_Kidney_Injury (0 = false/1 = true)
     st.markdown('**Acute kidney injury:**')
     aki = st.selectbox('by KDIGO criteria',options = ['No','Yes'])
     Acute_Kidney_Injury = 1 if aki == 'Yes' else 0 
+with col2:
     # Hypothermia (0 = false/1 = true)
     st.markdown('**Hypothermia:**')
     hypo = st.selectbox('core temperature less than 35°C',options = ['No','Yes'])
     Hypothermia = 1 if hypo == 'Yes' else 0 
+with col3:
     # Hyperkalemia (0 = false/1 = true)
     st.markdown('**Hyperkalemia:**')
     hype = st.selectbox('serum potassium level > 5.2 mEq/L',options = ['No','Yes'])
     Hyperkalemia = 1 if hype == 'Yes' else 0 
+col1, col2, col3 = st.columns((1,1,1))
+with col1:
     # Thrombocytopenia (0 = false/1 = true)
     st.markdown('**Thrombocytopenia:**')
     th = st.selectbox('a platelet count of less than 150 × 103 per μL',options = ['No','Yes'])
