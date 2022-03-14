@@ -64,12 +64,6 @@ with col3:
     st.markdown('**Septic shock:**')
     ss = st.selectbox('sepsis with persisting hypotension requiring vasopressors to maintain MAP ≥65 mm Hg and having a serum lactate level >2 mmol/L (18 mg/dL) despite adequate volume resuscitation',options = ['No','Yes'])
     Septic_shock = 1 if ss == 'Yes' else 0 
-    
-col1, col2, col3 = st.columns((1,1,1))
-
-    
-    
-
 
 # upload X-ray image and return score(1-5)
 st.markdown('**請上傳一張X光圖：**')
